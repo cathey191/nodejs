@@ -11,15 +11,12 @@ function askQuestion(i) {
 process.stdin.on('data', function(answer) {
 	var questionNumber = usersAnswers.length;
 	var inputAnswer = answer.toString().trim();
+	usersAnswers.push(inputAnswer);
 
 	if (usersAnswers.length != answers.length) {
-		usersAnswers.push(inputAnswer);
-
-		if (usersAnswers.length != answers.length) {
-			askQuestion(usersAnswers.length);
-		} else {
-			process.exit();
-		}
+		askQuestion(usersAnswers.length);
+	} else {
+		process.exit();
 	}
 });
 
