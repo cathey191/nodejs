@@ -27,3 +27,7 @@ process.stdin.on('data', function(answer) {
 });
 
 askQuestion(0);
+
+process.on('exit', function() {
+	process.stdout.write(`\n\n\n Congrates, you have completed the quiz\n\n\n`);
+});
